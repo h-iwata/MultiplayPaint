@@ -1,3 +1,4 @@
 # MultiplayPaint
-multiplay paint app for android and ios. cocos2d-x and photon. this project is in develop.
+multiplay paint app for android and ios. cocos2d-x and photon. not completed yet.
+
 
