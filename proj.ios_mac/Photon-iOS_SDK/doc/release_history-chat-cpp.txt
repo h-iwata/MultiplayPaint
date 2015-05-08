@@ -1,0 +1,41 @@
+* release_history-chat-cpp.txt
+* Release history for the Exit Games Chat API C++ Client Library
+
+(C) 2004-2015 Exit Games GmbH, http://www.exitgames.com
+
+Questions? Visit:
+	http://doc.exitgames.com/en/chat
+	http://forum.exitgames.com
+
+
+*** version 4.0.0.0
+	Date: 12-04-2014
+	- added: optional "encrypt" parameter to Client::opSendPrivateMessage() - sends operation encrypted
+	- added: Client::setUserId() and Client::getUserId()
+	- changed: Listener::subscribeReturn() and Listener::unsubscribeReturn(): error code and message have been removed from parameters since server sends events on opSubscribe() and opUnsubscribe() instead of responses
+	- removed: Peer::opSetFriendList()
+	- added: Peer::opAddFriends()
+	- added: Peer::opRemoveFriends()
+	- added: parameter "encrypt" to Peer::opSendPrivateMessage()
+	- added: parameter "skipMessage" to Peer::opSetOnlineStatus()
+	- added: Client::connect() overload without nameserver address parameter, that connects to the Photon public cloud nameserver
+	- removed: optional parameter "lastMessageIndex" from Peer::opSubscribe()
+	- added: optional parameter "messagesFromHistory" to Peer::opSubscribe()
+	- removed: parameters "errorCode" and "errorString" from Listener::subscribeReturn()
+	- removed: parameters "results", "errorCode" and "errorString" from Listener::unsubscribeReturn()
+	- added: parameter "gotMessage" to Listener::onStatusUpdate()
+	- removed: parameter "highestMessageId" from Listener::onGetMessages()
+	- added: parameter "channelName" to Listener::onPrivateMessage()
+	- added: wrapper functions in Chat::Client for everything in the public Chat::Peer API that makes sense to also have access to in the public Chat::Client API
+	- removed: Client::getNameserverAddress(); it only provides irrelevant information, because the nameserver address is always either what the app has passed to connect or the default parameter value of that function, so it is known to the app anyway
+	- fixed: when connecting to the the Cloud Chat service via TCP without explicitly specifying the address and the port, then the wrong port has been used 
+
+
+*** version 1.0.0.2
+	Date: 05-27-2014
+	- fixed: missing graphs in documentation
+
+
+*** version 1.0.0.0
+	Date: 04-24-2014
+	Initial Version

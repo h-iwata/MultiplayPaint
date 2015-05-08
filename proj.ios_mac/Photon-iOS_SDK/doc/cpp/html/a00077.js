@@ -1,0 +1,28 @@
+var a00077 =
+[
+    [ "~MutableRoom", "a00077.html#a4684aed6e341185eeb33907cabb81421", null ],
+    [ "MutableRoom", "a00077.html#ad1bd43622ba6c2226f98c75d3f978f6c", null ],
+    [ "operator=", "a00077.html#a6d1a7c0a41c5f843e80437566d5dff30", null ],
+    [ "getPlayerCount", "a00077.html#a3ec81d477e8f78e9439455168174df79", null ],
+    [ "setMaxPlayers", "a00077.html#a142ea14386e34af5b67a4f56d600dd9f", null ],
+    [ "setIsOpen", "a00077.html#a0a3082e74208c8b064dad8bd56621675", null ],
+    [ "getIsVisible", "a00077.html#a0de4a08a7d112c1431cef1bbfc45ced2", null ],
+    [ "setIsVisible", "a00077.html#a071fa2a49d531a0fe12f7083063df146", null ],
+    [ "getPlayers", "a00077.html#a6b618a4b050926aee42fc2b287522107", null ],
+    [ "getPlayerForNumber", "a00077.html#af56aca4e31bcfa63e8a02909d8dc908d", null ],
+    [ "getMasterClientID", "a00077.html#a533935615c6114f2b47d4c05c6f58428", null ],
+    [ "getPropsListedInLobby", "a00077.html#a83f6d7263c719fc053b818b7fb8aef1c", null ],
+    [ "setPropsListedInLobby", "a00077.html#a17a1641469bf23a32d9880cb2db5bcc6", null ],
+    [ "getPlayerTtl", "a00077.html#a91c7ba6df6dafca902a34491e487c6d8", null ],
+    [ "getRoomTtl", "a00077.html#a060ff88dbed6beca60d7a38850f787a7", null ],
+    [ "mergeCustomProperties", "a00077.html#add2b5a963934684d1c386b62dde42b2b", null ],
+    [ "addCustomProperty", "a00077.html#a2014b037a4c084e79d0227dfa1adbf8f", null ],
+    [ "addCustomProperties", "a00077.html#ad10ad6ac5091e740ad55bf46d16a5871", null ],
+    [ "removeCustomProperty", "a00077.html#a14c5e8d9b812b51eb31dc6cd766fc01d", null ],
+    [ "removeCustomProperties", "a00077.html#ad2efe1fb0fee189fa191f7a0cbd62f45", null ],
+    [ "toString", "a00077.html#a6aefc9af780540113ceb55216be934b8", null ],
+    [ "MutableRoomFactory", "a00077.html#a928017308e2a7d2b67a4ff720dd37ff2", null ],
+    [ "Internal::RoomPropertiesCacher", "a00077.html#a4f153206298735af6004961baca504cf", null ],
+    [ "Internal::PlayerMovementInformant", "a00077.html#aa0b0ff67511be25ff110f16a7e8bd4dd", null ],
+    [ "Internal::PlayerPropertiesUpdateInformant", "a00077.html#aac9069f3a86d1cd793ef33c0ee146a69", null ]
+];
