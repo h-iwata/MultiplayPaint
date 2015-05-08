@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{2e2a61aa-c1a1-41d6-8629-70ad8909f556}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Java Source Files">
+      <UniqueIdentifier>{4dd792d3-d829-405f-8d56-4a32a95894af}</UniqueIdentifier>
+      <Extensions>*.java</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{09a202e8-3ced-4f97-8598-6fb52b0c0199}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{808287ee-f837-4ed2-b4c5-8fda79b73108}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{ef9cd5ca-f359-496e-96cc-f9372fe83017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\common">
+      <UniqueIdentifier>{68c16713-4c54-4c3f-921b-06c909899502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\android">
+      <UniqueIdentifier>{7e45946d-05af-4537-aa26-e06ca5ebc701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\android">
+      <UniqueIdentifier>{ee93fa78-d4ee-42da-bae9-a595085a8d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\demo">
+      <UniqueIdentifier>{13581ce4-7cb5-4a57-ab31-e8846ef7894d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\demo\android">
+      <UniqueIdentifier>{62eae198-f950-4e64-9e3a-e935dd3b8cbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\demo\android\loadBalancing">
+      <UniqueIdentifier>{8ea95676-2d99-4171-b7d3-5cb129806ca4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AndroidManifest.xml" />
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+    <None Include="src\demo\android\loadBalancing\DemoActivity.java">
+      <Filter>Java Source Files\demo\android\loadBalancing</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jni\AndroidNetworkLogic.h">
+      <Filter>inc\android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\NetworkLogic.h">
+      <Filter>inc\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\OutputListener.h">
+      <Filter>inc\common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jni\AndroidNetworkLogic.cpp">
+      <Filter>src\android</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\main.cpp">
+      <Filter>src\android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\NetworkLogic.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

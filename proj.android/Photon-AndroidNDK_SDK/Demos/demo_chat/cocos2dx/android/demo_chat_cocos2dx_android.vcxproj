@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4CC84BCC-0747-4FCD-8576-6F3FBD29B994}</ProjectGuid>
+    <ProjectName>demo_chat_cocos2dx_android</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>D:\Dev\android-ndk\platforms\android-9\arch-x86\usr\include;$(ProjectDir)\jni/../../../../etc-bin/cocos2dx/cocos2dx;$(ProjectDir)\jni/../../../../etc-bin/cocos2dx/cocos2dx/include;$(ProjectDir)\jni/../../../../etc-bin/cocos2dx/cocos2dx/kazmath/include;$(ProjectDir)\jni/../../../../etc-bin/cocos2dx/cocos2dx/platform/android;D:\Dev\android-ndk\toolchains\x86-4.8\prebuilt\windows-x86_64\lib\gcc\i686-linux-android\4.8\include;D:\Dev\android-ndk\toolchains\x86-4.8\prebuilt\windows-x86_64\lib\gcc\i686-linux-android\4.8\include-fixed;D:\Dev\android-ndk\platforms\android-9\arch-mips\usr\include;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include-fixed;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakeOutput>$(ProjectDir)demo_chat_cocos2dx_android-Debug.vgdbsettings</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>D:\Dev\android-ndk\platforms\android-9\arch-mips\usr\include;$(ProjectDir)\jni/../../../../..;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include-fixed;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakeOutput>$(ProjectDir)demo_chat_cocos2dx_android-Release.vgdbsettings</NMakeOutput>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="AndroidManifest.xml" />
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+    <None Include="src\org\cocos2dx\application\ApplicationDemo.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxAccelerometer.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxActivity.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxBitmap.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxEditBoxDialog.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxEditText.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxETCLoader.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxGLSurfaceView.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxHandler.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxHelper.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxLocalStorage.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxMusic.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxRenderer.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxSound.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxTextInputWraper.java" />
+    <None Include="src\org\cocos2dx\lib\Cocos2dxTypefaces.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AppDelegate.cpp" />
+    <ClCompile Include="..\src\DemoScene.cpp" />
+    <ClCompile Include="..\src\ListController.cpp" />
+    <ClCompile Include="jni\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\AppDelegate.h" />
+    <ClInclude Include="..\inc\DemoConstants.h" />
+    <ClInclude Include="..\inc\DemoScene.h" />
+    <ClInclude Include="..\inc\ListController.h" />
+    <ClInclude Include="..\inc\ViewConstants.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

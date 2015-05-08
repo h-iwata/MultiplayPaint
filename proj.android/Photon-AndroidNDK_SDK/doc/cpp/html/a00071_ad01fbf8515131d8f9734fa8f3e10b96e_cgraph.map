@@ -1,0 +1,5 @@
+<map id="opSetPropertiesOfGame" name="opSetPropertiesOfGame">
+<area shape="rect" id="node3" href="$a00060.html#a0d06f6d6cdd1818b59e60400be2a03ba" title="ExitGames::Common::\lDictionary::put" alt="" coords="194,5,321,41"/>
+<area shape="rect" id="node7" href="$a00085.html#a3c1268775eba0cfe2b6f7e309a27e2fd" title="ExitGames::Photon::\lPhotonPeer::opCustom" alt="" coords="192,65,323,101"/>
+<area shape="rect" id="node5" href="$a00061.html#a30278606b1dd8160eec543f4fe3ad25e" title="ExitGames::Common::\lDictionaryBase::getHashtable" alt="" coords="371,5,535,41"/>
+</map>

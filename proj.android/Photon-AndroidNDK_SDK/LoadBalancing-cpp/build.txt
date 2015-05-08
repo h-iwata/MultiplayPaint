@@ -1,0 +1,4 @@
+<ANDROID_NDK_ROOT>\ndk-build [options]
+Options:
+For debug build: NDK_DEBUG=1
+For no-rtti version: NDK_APPLICATION_MK=jni/Application_no-rtti.mk

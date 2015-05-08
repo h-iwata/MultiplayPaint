@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">demo_loabBalancing_cpp</string>
+    <string name="button_leave_title">Leave Game</string>
+    <string name="button_create_title">Create Game</string>
+    <string name="button_join_title">Join Game</string>
+
+</resources>

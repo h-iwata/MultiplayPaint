@@ -1,0 +1,29 @@
+<map id="AuthenticationValues.h" name="AuthenticationValues.h">
+<area shape="rect" id="node3" href="$a00118.html" title="Common&#45;cpp/inc/Common.h" alt="" coords="512,173,667,197"/>
+<area shape="rect" id="node143" href="$a00123.html" title="LoadBalancing&#45;cpp/inc\l/Enums/CustomAuthentication\lType.h" alt="" coords="567,77,732,125"/>
+<area shape="rect" id="node22" href="$a00140.html" title="Common&#45;cpp/inc/Dictionary.h" alt="" coords="785,337,948,361"/>
+<area shape="rect" id="node120" href="$a00096.html" title="Common&#45;cpp/inc/ANSIString.h" alt="" coords="447,423,613,447"/>
+<area shape="rect" id="node125" href="$a00146.html" title="Common&#45;cpp/inc/EGTime.h" alt="" coords="334,501,484,525"/>
+<area shape="rect" id="node128" href="$a00283.html" title="Common&#45;cpp/inc/Serializer.h" alt="" coords="569,252,727,276"/>
+<area shape="rect" id="node136" href="$a00137.html" title="Common&#45;cpp/inc/DeSerializer.h" alt="" coords="803,252,975,276"/>
+<area shape="rect" id="node24" href="$a00142.html" title="Common&#45;cpp/inc/Dictionary\lBase.h" alt="" coords="829,417,981,453"/>
+<area shape="rect" id="node26" href="$a00174.html" title="Common&#45;cpp/inc/Hashtable.h" alt="" coords="972,501,1135,525"/>
+<area shape="rect" id="node105" href="$a00182.html" title="Common&#45;cpp/inc/JVector.h" alt="" coords="1665,908,1817,932"/>
+<area shape="rect" id="node30" href="$a00183.html" title="Common&#45;cpp/inc/KeyObject.h" alt="" coords="846,659,1009,683"/>
+<area shape="rect" id="node36" href="$a00217.html" title="Common&#45;cpp/inc/Object.h" alt="" coords="1073,823,1217,847"/>
+<area shape="rect" id="node67" href="$a00305.html" title="Common&#45;cpp/inc/Enums\l/TypeCode.h" alt="" coords="541,817,677,853"/>
+<area shape="rect" id="node38" href="$a00107.html" title="Common&#45;cpp/inc/Base.h" alt="" coords="660,993,799,1017"/>
+<area shape="rect" id="node40" href="$a00196.html" title="Common&#45;cpp/inc/Logger.h" alt="" coords="555,1079,703,1103"/>
+<area shape="rect" id="node59" href="$a00094.html" title="Common&#45;cpp/inc/MemoryManagement\l/Allocate.h" alt="" coords="735,1073,939,1109"/>
+<area shape="rect" id="node42" href="$a00110.html" title="Common&#45;cpp/inc/BaseListener.h" alt="" coords="532,1164,711,1188"/>
+<area shape="rect" id="node57" href="$a00134.html" title="Common&#45;cpp/inc/Enums\l/DebugLevel.h" alt="" coords="682,1243,819,1279"/>
+<area shape="rect" id="node48" href="$a00181.html" title="Common&#45;cpp/inc/JString.h" alt="" coords="1084,1328,1231,1352"/>
+<area shape="rect" id="node52" href="$a00293.html" title="Common&#45;cpp/inc/ToString.h" alt="" coords="993,1407,1148,1431"/>
+<area shape="rect" id="node72" href="$a00313.html" title="Common&#45;cpp/inc/ValueObject.h" alt="" coords="1113,659,1287,683"/>
+<area shape="rect" id="node79" href="$a00125.html" title="Common&#45;cpp/inc/CustomType.h" alt="" coords="874,823,1048,847"/>
+<area shape="rect" id="node81" href="$a00127.html" title="Common&#45;cpp/inc/CustomType\lBase.h" alt="" coords="292,902,457,938"/>
+<area shape="rect" id="node89" href="$a00130.html" title="Common&#45;cpp/inc/CustomType\lFactory.h" alt="" coords="752,902,917,938"/>
+<area shape="rect" id="node108" href="$a00178.html" title="Common&#45;cpp/inc/Helpers\l/IsPrimitiveType.h" alt="" coords="1801,987,1943,1023"/>
+<area shape="rect" id="node122" href="$a00109.html" title="Common&#45;cpp/inc/BaseCharString.h" alt="" coords="509,501,699,525"/>
+<area shape="rect" id="node133" href="$a00310.html" title="Common&#45;cpp/inc/UTF8String.h" alt="" coords="638,423,804,447"/>
+</map>

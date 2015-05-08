@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{5c092b2b-0a40-49db-ace9-7a45fa101db5}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{3607b4b2-642e-4ce9-82c4-3ae59af949e5}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="inc\Enums">
+      <UniqueIdentifier>{1922a215-a4a6-469f-8634-00323a9ea1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{cf77e368-2fe9-49eb-a454-9a812eb1f835}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="inc\Internal">
+      <UniqueIdentifier>{b239db52-de83-4d0f-ac12-812ab0c7ef58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\Internal\Enums">
+      <UniqueIdentifier>{25999af9-8dd7-480a-b933-4ad373240626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\Internal\Enums\Properties">
+      <UniqueIdentifier>{741102df-edcf-4f27-8acb-a5b92ce7a214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Internal">
+      <UniqueIdentifier>{915949a0-9f74-4e1c-b407-ab2d6a5796e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\AuthenticationValues.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Client.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\FriendInfo.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Listener.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\MutablePlayer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\MutableRoom.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Peer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Player.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Room.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\CustomAuthenticationType.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\DisconnectCause.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\ErrorCode.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\LobbyType.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\MatchmakingMode.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\PeerStates.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Enums\ServerType.h">
+      <Filter>inc\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\AuthenticationValuesSecretSetter.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\MutablePlayerFactory.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\MutableRoomFactory.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\PlayerFactory.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\PlayerMovementInformant.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\PlayerPropertiesCacher.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\PlayerPropertiesUpdateInformant.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\RoomFactory.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\RoomPropertiesCacher.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Utils.h">
+      <Filter>inc\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Enums\EventCode.h">
+      <Filter>inc\Internal\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Enums\JoinType.h">
+      <Filter>inc\Internal\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Enums\OperationCode.h">
+      <Filter>inc\Internal\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Enums\ParameterCode.h">
+      <Filter>inc\Internal\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Enums\Properties\Player.h">
+      <Filter>inc\Internal\Enums\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Internal\Enums\Properties\Room.h">
+      <Filter>inc\Internal\Enums\Properties</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\LobbyStatsRequest.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\LobbyStatsResponse.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuthenticationValues.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Client.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FriendInfo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MutablePlayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MutableRoom.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Peer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Room.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\AuthenticationValuesSecretSetter.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\MutablePlayerFactory.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\MutableRoomFactory.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\PlayerFactory.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\PlayerMovementInformant.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\PlayerPropertiesCacher.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\PlayerPropertiesUpdateInformant.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\RoomFactory.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\RoomPropertiesCacher.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Internal\Utils.cpp">
+      <Filter>src\Internal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LobbyStatsRequest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LobbyStatsResponse.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<map id="opCustom" name="opCustom">
+<area shape="rect" id="node3" href="$a00071.html#aa3c67ad2f68b154c4fe37ef12737b6f9" title="ExitGames::Lite::LitePeer\l::opJoin" alt="" coords="128,5,269,41"/>
+<area shape="rect" id="node5" href="$a00071.html#ab895dbaac2028a5551b02a8fcbcf662a" title="ExitGames::Lite::LitePeer\l::opLeave" alt="" coords="128,65,269,101"/>
+<area shape="rect" id="node7" href="$a00071.html#a27a98d2df8a640be7b0bace79d417cfe" title="ExitGames::Lite::LitePeer\l::opChangeGroups" alt="" coords="128,125,269,161"/>
+<area shape="rect" id="node9" href="$a00071.html#a9c8292c06d60a6550f62f001771f0b93" title="ExitGames::Lite::LitePeer\l::opSetPropertiesOfActor" alt="" coords="127,185,271,221"/>
+<area shape="rect" id="node11" href="$a00071.html#ad01fbf8515131d8f9734fa8f3e10b96e" title="ExitGames::Lite::LitePeer\l::opSetPropertiesOfGame" alt="" coords="126,245,271,281"/>
+<area shape="rect" id="node13" href="$a00071.html#a31456fbb3ccb78af5ad978463a8ee26c" title="ExitGames::Lite::LitePeer\l::opGetProperties" alt="" coords="128,305,269,341"/>
+<area shape="rect" id="node15" href="$a00071.html#a7ff3511faee7df4cfd48f8cba05be3c2" title="ExitGames::Lite::LitePeer\l::opGetPropertiesOfActor" alt="" coords="126,365,271,401"/>
+<area shape="rect" id="node17" href="$a00071.html#ae994380b97ced6d96f0ed9b8e0582877" title="ExitGames::Lite::LitePeer\l::opGetPropertiesOfGame" alt="" coords="125,425,272,461"/>
+</map>

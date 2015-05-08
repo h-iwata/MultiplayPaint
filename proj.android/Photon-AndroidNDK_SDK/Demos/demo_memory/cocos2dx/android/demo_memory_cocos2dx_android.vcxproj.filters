@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{2e2a61aa-c1a1-41d6-8629-70ad8909f556}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Java Source Files">
+      <UniqueIdentifier>{4dd792d3-d829-405f-8d56-4a32a95894af}</UniqueIdentifier>
+      <Extensions>*.java</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{09a202e8-3ced-4f97-8598-6fb52b0c0199}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{808287ee-f837-4ed2-b4c5-8fda79b73108}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Java Source Files\org">
+      <UniqueIdentifier>{13581ce4-7cb5-4a57-ab31-e8846ef7894d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\org\cocos2dx">
+      <UniqueIdentifier>{62eae198-f950-4e64-9e3a-e935dd3b8cbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\org\cocos2dx\lib">
+      <UniqueIdentifier>{92024ebd-c8e2-4080-906f-5093d35e3dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\org\cocos2dx\application">
+      <UniqueIdentifier>{8ea95676-2d99-4171-b7d3-5cb129806ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\common">
+      <UniqueIdentifier>{ef9cd5ca-f359-496e-96cc-f9372fe83017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cocos2dx">
+      <UniqueIdentifier>{58487134-ed3b-4f6b-9ec7-d1b9b684d020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\cocos2dx">
+      <UniqueIdentifier>{ee93fa78-d4ee-42da-bae9-a595085a8d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\common">
+      <UniqueIdentifier>{68c16713-4c54-4c3f-921b-06c909899502}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AndroidManifest.xml" />
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+    <None Include="src\org\cocos2dx\application\ApplicationDemo.java">
+      <Filter>Java Source Files\org\cocos2dx\application</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxActivity.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxBitmap.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxEditBoxDialog.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxEditText.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxETCLoader.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxGLSurfaceView.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxHandler.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxHelper.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxLocalStorage.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxMusic.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxRenderer.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxSound.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxTextInputWraper.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxTypefaces.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\lib\Cocos2dxAccelerometer.java">
+      <Filter>Java Source Files\org\cocos2dx\lib</Filter>
+    </None>
+    <None Include="src\org\cocos2dx\application\ApplicationDemoActivity.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AppDelegate.cpp">
+      <Filter>src\cocos2dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ListController.cpp">
+      <Filter>src\cocos2dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\LoadBalancingListener.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\BaseView.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\View.cpp">
+      <Filter>src\cocos2dx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Game.cpp">
+      <Filter>src\common</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\BaseView.h">
+      <Filter>inc\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\DemoConstants.h">
+      <Filter>inc\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\LoadBalancingListener.h">
+      <Filter>inc\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\AppDelegate.h">
+      <Filter>inc\cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\ListController.h">
+      <Filter>inc\cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\View.h">
+      <Filter>inc\cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\ViewConstants.h">
+      <Filter>inc\cocos2dx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Game.h">
+      <Filter>inc\common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

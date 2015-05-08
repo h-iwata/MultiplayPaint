@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" >
+
+        <TextView
+            android:id="@+id/txtView"
+            android:layout_width="fill_parent"
+            android:layout_gravity="fill_vertical|fill_horizontal|fill" android:layout_height="wrap_content" android:layout_marginBottom="5pt"/>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" android:visibility="visible">
+
+        <FrameLayout
+            android:id="@+id/viewGameRoom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:visibility="invisible">
+
+            <Button
+                android:id="@+id/buttonLeave"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_leave_title" android:layout_gravity="center_vertical|center_horizontal" android:layout_marginLeft="10pt" android:layout_marginRight="10pt"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/viewMasterServer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:visibility="invisible">
+
+            <Button
+                android:id="@+id/buttonCreate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_create_title" android:layout_gravity="center_vertical|center_horizontal" android:layout_marginTop="15pt" android:layout_marginLeft="10pt" android:layout_marginRight="10pt"/>
+
+            <Button
+                android:id="@+id/buttonJoin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_join_title" android:layout_gravity="center_vertical|center_horizontal" android:layout_marginBottom="15pt" android:layout_marginRight="10pt" android:layout_marginLeft="10pt"/>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

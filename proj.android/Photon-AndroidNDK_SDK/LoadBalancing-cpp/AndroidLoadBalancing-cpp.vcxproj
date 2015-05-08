@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{832980AB-CBDF-4EF6-945F-285979D09285}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>D:\Dev\android-ndk\platforms\android-9\arch-mips\usr\include;$(ProjectDir)\..;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include-fixed;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakeOutput>$(ProjectDir)AndroidLoadBalancing-cpp-Debug.vgdbsettings</NMakeOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>D:\Dev\android-ndk\platforms\android-9\arch-mips\usr\include;$(ProjectDir)\..;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include;D:\Dev\android-ndk\toolchains\mipsel-linux-android-4.8\prebuilt\windows-x86_64\lib\gcc\mipsel-linux-android\4.8\include-fixed;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakeOutput>$(ProjectDir)AndroidLoadBalancing-cpp-Release.vgdbsettings</NMakeOutput>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\AuthenticationValues.h" />
+    <ClInclude Include="inc\Client.h" />
+    <ClInclude Include="inc\Enums\CustomAuthenticationType.h" />
+    <ClInclude Include="inc\Enums\DisconnectCause.h" />
+    <ClInclude Include="inc\Enums\ErrorCode.h" />
+    <ClInclude Include="inc\Enums\LobbyType.h" />
+    <ClInclude Include="inc\Enums\MatchmakingMode.h" />
+    <ClInclude Include="inc\Enums\PeerStates.h" />
+    <ClInclude Include="inc\Enums\ServerType.h" />
+    <ClInclude Include="inc\FriendInfo.h" />
+    <ClInclude Include="inc\Internal\AuthenticationValuesSecretSetter.h" />
+    <ClInclude Include="inc\Internal\Enums\EventCode.h" />
+    <ClInclude Include="inc\Internal\Enums\JoinType.h" />
+    <ClInclude Include="inc\Internal\Enums\OperationCode.h" />
+    <ClInclude Include="inc\Internal\Enums\ParameterCode.h" />
+    <ClInclude Include="inc\Internal\Enums\Properties\Player.h" />
+    <ClInclude Include="inc\Internal\Enums\Properties\Room.h" />
+    <ClInclude Include="inc\Internal\MutablePlayerFactory.h" />
+    <ClInclude Include="inc\Internal\MutableRoomFactory.h" />
+    <ClInclude Include="inc\Internal\PlayerFactory.h" />
+    <ClInclude Include="inc\Internal\PlayerMovementInformant.h" />
+    <ClInclude Include="inc\Internal\PlayerPropertiesCacher.h" />
+    <ClInclude Include="inc\Internal\PlayerPropertiesUpdateInformant.h" />
+    <ClInclude Include="inc\Internal\RoomFactory.h" />
+    <ClInclude Include="inc\Internal\RoomPropertiesCacher.h" />
+    <ClInclude Include="inc\Internal\Utils.h" />
+    <ClInclude Include="inc\Listener.h" />
+    <ClInclude Include="inc\LobbyStatsRequest.h" />
+    <ClInclude Include="inc\LobbyStatsResponse.h" />
+    <ClInclude Include="inc\MutablePlayer.h" />
+    <ClInclude Include="inc\MutableRoom.h" />
+    <ClInclude Include="inc\Peer.h" />
+    <ClInclude Include="inc\Player.h" />
+    <ClInclude Include="inc\Room.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuthenticationValues.cpp" />
+    <ClCompile Include="src\Client.cpp" />
+    <ClCompile Include="src\FriendInfo.cpp" />
+    <ClCompile Include="src\Internal\AuthenticationValuesSecretSetter.cpp" />
+    <ClCompile Include="src\Internal\MutablePlayerFactory.cpp" />
+    <ClCompile Include="src\Internal\MutableRoomFactory.cpp" />
+    <ClCompile Include="src\Internal\PlayerFactory.cpp" />
+    <ClCompile Include="src\Internal\PlayerMovementInformant.cpp" />
+    <ClCompile Include="src\Internal\PlayerPropertiesCacher.cpp" />
+    <ClCompile Include="src\Internal\PlayerPropertiesUpdateInformant.cpp" />
+    <ClCompile Include="src\Internal\RoomFactory.cpp" />
+    <ClCompile Include="src\Internal\RoomPropertiesCacher.cpp" />
+    <ClCompile Include="src\Internal\Utils.cpp" />
+    <ClCompile Include="src\LobbyStatsRequest.cpp" />
+    <ClCompile Include="src\LobbyStatsResponse.cpp" />
+    <ClCompile Include="src\MutablePlayer.cpp" />
+    <ClCompile Include="src\MutableRoom.cpp" />
+    <ClCompile Include="src\Peer.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Room.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
