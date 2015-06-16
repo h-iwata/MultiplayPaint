@@ -1,4 +1,4 @@
 # MultiplayPaint
-Test multiplay app using cocos2d-x and photon
+Multiplayer app demo using cocos2d-x and photon.
 
 
