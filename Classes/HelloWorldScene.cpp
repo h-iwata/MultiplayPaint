@@ -102,10 +102,10 @@ void HelloWorld::update(float delta) {
 		case STATE_CONNECTED:
 		case STATE_LEFT:
 			if (networkLogic->isRoomExists()) {
-				networkLogic->setLastInput(INPUT_2);
+				networkLogic->setLastInput(INPUT_JOIN_GAME);
 			}
 			else {
-				networkLogic->setLastInput(INPUT_1);
+				networkLogic->setLastInput(INPUT_CREATE_GAME);
 			}
 			break;
 

@@ -10,8 +10,8 @@
 enum Input
 {
 	INPUT_NON = 0,
-	INPUT_1, //create game
-	INPUT_2, //join Game
+	INPUT_CREATE_GAME,
+	INPUT_JOIN_GAME,
 	INPUT_EXIT
 };
 

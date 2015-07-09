@@ -78,11 +78,11 @@ void NetworkListener::run(void) {
 
 			case STATE_CONNECTED:
 				switch (mLastInput) {
-					case INPUT_1: // create Game
+					case INPUT_CREATE_GAME:
 						opCreateRoom();
 						break;
 
-					case INPUT_2: // join Game
+					case INPUT_JOIN_GAME:
 						// remove false to enable rejoin
 						if (false && mLastJoinedRoom.length()) {
 							mLoadBalancingClient.opJoinRoom(mLastJoinedRoom, true, mLastActorNr);
@@ -104,12 +104,12 @@ void NetworkListener::run(void) {
 			case STATE_JOINED:
 				sendEvent();
 				switch (mLastInput) {
-					case INPUT_1: // leave Game
+					case INPUT_CREATE_GAME:
 						mLoadBalancingClient.opLeaveRoom();
 						mStateAccessor.setState(STATE_LEAVING);
 						break;
 
-					case INPUT_2: // leave Game
+					case INPUT_JOIN_GAME:
 						mLoadBalancingClient.opLeaveRoom(true);
 						mStateAccessor.setState(STATE_LEAVING);
 						break;
