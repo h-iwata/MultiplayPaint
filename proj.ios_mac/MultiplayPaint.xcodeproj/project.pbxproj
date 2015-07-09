@@ -47,6 +47,7 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		E94D784C1B4E5ADC001D583E /* reset-button.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E94D784B1B4E5ADC001D583E /* reset-button.jpg */; };
 		E9C011F31AFCBBEF00529176 /* NetworkLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9C011EB1AFCBBEF00529176 /* NetworkLogic.cpp */; };
 		E9C011F41AFCBBEF00529176 /* NetworkLogicListner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9C011ED1AFCBBEF00529176 /* NetworkLogicListner.cpp */; };
 		E9C011F51AFCBBEF00529176 /* NetworkState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9C011EF1AFCBBEF00529176 /* NetworkState.cpp */; };
@@ -123,6 +124,7 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		E94D784B1B4E5ADC001D583E /* reset-button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "reset-button.jpg"; sourceTree = "<group>"; };
 		E9C011EB1AFCBBEF00529176 /* NetworkLogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkLogic.cpp; sourceTree = "<group>"; };
 		E9C011EC1AFCBBEF00529176 /* NetworkLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkLogic.h; sourceTree = "<group>"; };
 		E9C011ED1AFCBBEF00529176 /* NetworkLogicListner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkLogicListner.cpp; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E94D784B1B4E5ADC001D583E /* reset-button.jpg */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -355,6 +358,7 @@
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				E94D784C1B4E5ADC001D583E /* reset-button.jpg in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
