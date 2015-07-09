@@ -30,7 +30,7 @@ bool HelloWorld::init()
     _listener->onTouchEnded = CC_CALLBACK_2(HelloWorld::onTouchEnded, this);
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(_listener, this);
 
-    networkLogic = new NetworkListener();
+    networkListener = new NetworkListener();
     scheduleUpdate();
 
     return true;
@@ -68,7 +68,7 @@ void HelloWorld::onTapResetButton(cocos2d::Ref* pSender)
     _renderTexture->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
     addChild(_renderTexture);
 
-    networkLogic->sendEvent(TAP_RESET, new ExitGames::Common::Hashtable());
+    networkListener->sendEvent(TAP_RESET, new ExitGames::Common::Hashtable());
 }
 
 bool HelloWorld::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
@@ -77,18 +77,18 @@ bool HelloWorld::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
     ExitGames::Common::Hashtable* eventContent = new ExitGames::Common::Hashtable();
     eventContent->put<int, float>(1, touch->getLocation().x);
     eventContent->put<int, float>(2, touch->getLocation().y);
-    networkLogic->sendEvent(TOUCH_BEGAN, eventContent);
+    networkListener->sendEvent(TOUCH_BEGAN, eventContent);
     return true;
 }
 
 void HelloWorld::onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event)
 {
-    drawLine(networkLogic->playerNr, touch->getLocation());
+    drawLine(networkListener->playerNr, touch->getLocation());
 
     ExitGames::Common::Hashtable* eventContent = new ExitGames::Common::Hashtable();
     eventContent->put<int, float>(1, touch->getLocation().x);
     eventContent->put<int, float>(2, touch->getLocation().y);
-    networkLogic->sendEvent(TOUCH_MOVING, eventContent);
+    networkListener->sendEvent(TOUCH_MOVING, eventContent);
 }
 
 void HelloWorld::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event) {}
@@ -105,21 +105,19 @@ void HelloWorld::drawLine(int playerId, Vec2 position)
 
 void HelloWorld::update(float delta)
 {
-    networkLogic->run();
-    switch (networkLogic->getState()) {
+    networkListener->run();
+    switch (networkListener->getState()) {
     case STATE_CONNECTED:
     case STATE_LEFT:
-        if (networkLogic->isRoomExists()) {
-            networkLogic->setLastInput(NetworkListener::INPUT_JOIN_GAME);
-        } else   {
-            networkLogic->setLastInput(NetworkListener::INPUT_CREATE_GAME);
+        if (networkListener->isRoomExists()) {
+            networkListener->setLastInput(NetworkListener::INPUT_JOIN_GAME);
+        } else {
+            networkListener->setLastInput(NetworkListener::INPUT_CREATE_GAME);
         }
         break;
-
     case STATE_DISCONNECTED:
-        networkLogic->connect();
+        networkListener->connect();
         break;
-
     case STATE_CONNECTING:
     case STATE_JOINING:
     case STATE_JOINED:
@@ -129,20 +127,20 @@ void HelloWorld::update(float delta)
         break;
     }
 
-    while (!networkLogic->beginEventQueue.empty()) {
-        std::array<float, 3>arr = networkLogic->beginEventQueue.front();
-        networkLogic->beginEventQueue.pop();
+    while (!networkListener->beginEventQueue.empty()) {
+        std::array<float, 3>arr = networkListener->beginEventQueue.front();
+        networkListener->beginEventQueue.pop();
         _previousTouchLocation =  Vec2(arr[1], arr[2]);
     }
 
-    while (!networkLogic->eventQueue.empty()) {
-        std::array<float, 3>arr = networkLogic->eventQueue.front();
-        networkLogic->eventQueue.pop();
+    while (!networkListener->eventQueue.empty()) {
+        std::array<float, 3>arr = networkListener->eventQueue.front();
+        networkListener->eventQueue.pop();
         drawLine(static_cast<int>(arr[0]), Vec2(arr[1], arr[2]));
     }
 
-    while (!networkLogic->tapResetEnventQueue.empty()) {
-        networkLogic->tapResetEnventQueue.pop();
+    while (!networkListener->tapResetEnventQueue.empty()) {
+        networkListener->tapResetEnventQueue.pop();
         cocos2d::Size visibleSize = Director::getInstance()->getVisibleSize();
         _renderTexture->removeFromParent();
         _renderTexture = RenderTexture::create(visibleSize.width, visibleSize.height);

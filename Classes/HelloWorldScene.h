@@ -32,7 +32,7 @@ private:
     RenderTexture* _renderTexture;
     Vec2 _previousTouchLocation;
     
-    NetworkListener* networkLogic;
+    NetworkListener* networkListener;
     
 };
 

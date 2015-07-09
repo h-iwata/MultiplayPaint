@@ -12,7 +12,8 @@ NetworkListener::NetworkListener(const LoadBalancing::AuthenticationValues& auth
                          APP_ID,
                          APP_VERSION,
                          PLAYER_NAME + GETTIMEMS(),
-                         Photon::ConnectionProtocol::UDP, authenticationValues,
+                         Photon::ConnectionProtocol::UDP,
+                         authenticationValues,
                          autoLobbbyStats,
                          useDefaultRegion)
     , mLastActorNr(0)
@@ -22,6 +23,84 @@ NetworkListener::NetworkListener(const LoadBalancing::AuthenticationValues& auth
     mLoadBalancingClient.setDebugOutputLevel(DEBUG_RELEASE(Common::DebugLevel::INFO, Common::DebugLevel::WARNINGS));
     Common::Base::setListener(this);
     Common::Base::setDebugOutputLevel(DEBUG_RELEASE(Common::DebugLevel::INFO, Common::DebugLevel::WARNINGS));
+}
+
+void NetworkListener::run(void)
+{
+    NetworkState state = mStateAccessor.getState();
+    if (mLastInput == INPUT_EXIT &&
+        state != STATE_DISCONNECTING &&
+        state != STATE_DISCONNECTED) {
+        disconnect();
+        mStateAccessor.setState(STATE_DISCONNECTING);
+    } else {
+        switch (state) {
+        case STATE_INITIALIZED:
+            connect();
+            mStateAccessor.setState(STATE_CONNECTING);
+            break;
+
+        case STATE_CONNECTING:
+            break;         // wait for callback
+
+        case STATE_CONNECTED:
+            switch (mLastInput) {
+            case INPUT_CREATE_GAME:
+                opCreateRoom();
+                break;
+
+            case INPUT_JOIN_GAME:
+                // remove false to enable rejoin
+                if (false && mLastJoinedRoom.length()) {
+                    mLoadBalancingClient.opJoinRoom(mLastJoinedRoom, true, mLastActorNr);
+                } else {
+                    opJoinRandomRoom();
+                }
+                mStateAccessor.setState(STATE_JOINING);
+                break;
+
+            default:                 // no or illegal input -> stay waiting for legal input
+                break;
+            }
+            break;
+
+        case STATE_JOINING:
+            break;         // wait for callback
+
+        case STATE_JOINED:
+            sendEvent();
+            switch (mLastInput) {
+            case INPUT_CREATE_GAME:
+                mLoadBalancingClient.opLeaveRoom();
+                mStateAccessor.setState(STATE_LEAVING);
+                break;
+
+            case INPUT_JOIN_GAME:
+                mLoadBalancingClient.opLeaveRoom(true);
+                mStateAccessor.setState(STATE_LEAVING);
+                break;
+
+            default:                 // no or illegal input -> stay waiting for legal input
+                break;
+            }
+            break;
+
+        case STATE_LEAVING:
+            break;
+
+        case STATE_LEFT:
+            mStateAccessor.setState(STATE_CONNECTED);
+            break;
+
+        case STATE_DISCONNECTING:
+            break;
+
+        default:
+            break;
+        }
+    }
+    mLastInput = INPUT_NON;
+    mLoadBalancingClient.service();
 }
 
 bool NetworkListener::isRoomExists(void)
@@ -70,81 +149,7 @@ void NetworkListener::opJoinRandomRoom(void)
     mLoadBalancingClient.opJoinRandomRoom();
 }
 
-void NetworkListener::run(void)
-{
-    NetworkState state = mStateAccessor.getState();
-    if (mLastInput == INPUT_EXIT && state != STATE_DISCONNECTING && state != STATE_DISCONNECTED) {
-        disconnect();
-        mStateAccessor.setState(STATE_DISCONNECTING);
-    } else {
-        switch (state) {
-        case STATE_INITIALIZED:
-            connect();
-            mStateAccessor.setState(STATE_CONNECTING);
-            break;
 
-        case STATE_CONNECTING:
-            break;     // wait for callback
-
-        case STATE_CONNECTED:
-            switch (mLastInput) {
-            case INPUT_CREATE_GAME:
-                opCreateRoom();
-                break;
-
-            case INPUT_JOIN_GAME:
-                // remove false to enable rejoin
-                if (false && mLastJoinedRoom.length()) {
-                    mLoadBalancingClient.opJoinRoom(mLastJoinedRoom, true, mLastActorNr);
-                } else {
-                    opJoinRandomRoom();
-                }
-                mStateAccessor.setState(STATE_JOINING);
-                break;
-
-            default:         // no or illegal input -> stay waiting for legal input
-                break;
-            }
-            break;
-
-        case STATE_JOINING:
-            break;     // wait for callback
-
-        case STATE_JOINED:
-            sendEvent();
-            switch (mLastInput) {
-            case INPUT_CREATE_GAME:
-                mLoadBalancingClient.opLeaveRoom();
-                mStateAccessor.setState(STATE_LEAVING);
-                break;
-
-            case INPUT_JOIN_GAME:
-                mLoadBalancingClient.opLeaveRoom(true);
-                mStateAccessor.setState(STATE_LEAVING);
-                break;
-
-            default:         // no or illegal input -> stay waiting for legal input
-                break;
-            }
-            break;
-
-        case STATE_LEAVING:
-            break;
-
-        case STATE_LEFT:
-            mStateAccessor.setState(STATE_CONNECTED);
-            break;
-
-        case STATE_DISCONNECTING:
-            break;
-
-        default:
-            break;
-        }
-    }
-    mLastInput = INPUT_NON;
-    mLoadBalancingClient.service();
-}
 
 void NetworkListener::customEventAction(int playerNr, nByte eventCode, const Common::Object& eventContent)
 {
