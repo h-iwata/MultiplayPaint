@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "MainScene.h"
 
 USING_NS_CC;
 
@@ -23,7 +23,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     }
     director->setDisplayStats(true);
     director->setAnimationInterval(1.0 / 60);
-    director->runWithScene(HelloWorld::createScene());
+    director->runWithScene(MainScene::createScene());
     return true;
 }
 

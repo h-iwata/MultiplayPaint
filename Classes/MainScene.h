@@ -1,5 +1,5 @@
-#ifndef __HELLOWORLD_SCENE_H__
-#define __HELLOWORLD_SCENE_H__
+#ifndef __MainScene_SCENE_H__
+#define __MainScene_SCENE_H__
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -8,10 +8,10 @@
 
 USING_NS_CC;
 
-class HelloWorld : public Layer
+class MainScene : public Layer
 {
 public:
-    CREATE_FUNC(HelloWorld);
+    CREATE_FUNC(MainScene);
     static Scene* createScene();
     virtual bool init();
 private:
@@ -36,4 +36,4 @@ private:
     
 };
 
-#endif // __HELLOWORLD_SCENE_H__
+#endif // __MainScene_SCENE_H__
