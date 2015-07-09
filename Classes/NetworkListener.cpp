@@ -1,25 +1,26 @@
 #include "NetworkListener.h"
+#include "NetworkEvent.h"
 
-static const ExitGames::Common::JString APP_ID = L"5b09cec4-926b-4668-aef7-74292e07c22c"; // set your app id here
-static const ExitGames::Common::JString APP_VERSION = L"1.0";
-static const ExitGames::Common::JString PLAYER_NAME = "user";
+static const Common::JString APP_ID = L"5b09cec4-926b-4668-aef7-74292e07c22c"; // set your app id here
+static const Common::JString APP_VERSION = L"1.0";
+static const Common::JString PLAYER_NAME = "user";
 static const bool autoLobbbyStats = true;
 static const bool useDefaultRegion = false;
 
-NetworkListener::NetworkListener(const ExitGames::LoadBalancing::AuthenticationValues& authenticationValues) :
+NetworkListener::NetworkListener(const LoadBalancing::AuthenticationValues& authenticationValues) :
 	mLoadBalancingClient(*this,
 	                     APP_ID,
 	                     APP_VERSION,
 	                     PLAYER_NAME + GETTIMEMS(),
-	                     ExitGames::Photon::ConnectionProtocol::UDP, authenticationValues,
+	                     Photon::ConnectionProtocol::UDP, authenticationValues,
 	                     autoLobbbyStats,
 	                     useDefaultRegion)
 	, mLastActorNr(0)
 	, mLastInput(INPUT_NON) {
 	mStateAccessor.setState(STATE_INITIALIZED);
-	mLoadBalancingClient.setDebugOutputLevel(DEBUG_RELEASE(ExitGames::Common::DebugLevel::INFO, ExitGames::Common::DebugLevel::WARNINGS));
-	ExitGames::Common::Base::setListener(this);
-	ExitGames::Common::Base::setDebugOutputLevel(DEBUG_RELEASE(ExitGames::Common::DebugLevel::INFO, ExitGames::Common::DebugLevel::WARNINGS));
+	mLoadBalancingClient.setDebugOutputLevel(DEBUG_RELEASE(Common::DebugLevel::INFO, Common::DebugLevel::WARNINGS));
+	Common::Base::setListener(this);
+	Common::Base::setDebugOutputLevel(DEBUG_RELEASE(Common::DebugLevel::INFO, Common::DebugLevel::WARNINGS));
 }
 
 bool NetworkListener::isRoomExists(void) {
@@ -42,7 +43,7 @@ NetworkState NetworkListener::getState(void) const {
 	return mStateAccessor.getState();
 }
 
-void NetworkListener::sendEvent(nByte code, ExitGames::Common::Hashtable *eventContent) {
+void NetworkListener::sendEvent(nByte code, Common::Hashtable *eventContent) {
 	mLoadBalancingClient.opRaiseEvent(true, eventContent, 1, code);
 }
 
@@ -51,8 +52,8 @@ void NetworkListener::registerForStateUpdates(NetworkLogicListener *listener) {
 }
 
 void NetworkListener::opCreateRoom(void) {
-	ExitGames::Common::JString tmp;
-	mLoadBalancingClient.opCreateRoom(tmp = GETTIMEMS(), true, true, 4, ExitGames::Common::Hashtable(), ExitGames::Common::JVector <ExitGames::Common::JString>(), ExitGames::Common::JString(), 1, INT_MAX / 2, 10000);
+	Common::JString tmp;
+	mLoadBalancingClient.opCreateRoom(tmp = GETTIMEMS(), true, true, 4, Common::Hashtable(), Common::JVector <Common::JString>(), Common::JString(), 1, INT_MAX / 2, 10000);
 	mStateAccessor.setState(STATE_JOINING);
 }
 
@@ -137,22 +138,22 @@ void NetworkListener::run(void) {
 	mLoadBalancingClient.service();
 }
 
-void NetworkListener::customEventAction(int playerNr, nByte eventCode, const ExitGames::Common::Object& eventContent) {
-	ExitGames::Common::Hashtable *event;
+void NetworkListener::customEventAction(int playerNr, nByte eventCode, const Common::Object& eventContent) {
+	Common::Hashtable *event;
 
 	switch (eventCode) {
 		case TOUCH_BEGAN: {
-			event = ExitGames::Common::ValueObject <ExitGames::Common::Hashtable *>(eventContent).getDataCopy();
-			float x = ExitGames::Common::ValueObject <float>(event->getValue(1)).getDataCopy();
-			float y = ExitGames::Common::ValueObject <float>(event->getValue(2)).getDataCopy();
+			event = Common::ValueObject <Common::Hashtable *>(eventContent).getDataCopy();
+			float x = Common::ValueObject <float>(event->getValue(1)).getDataCopy();
+			float y = Common::ValueObject <float>(event->getValue(2)).getDataCopy();
 			beginEventQueue.push({ static_cast <float>(playerNr), x, y });
 			break;
 		}
 
 		case TOUCH_MOVING: {
-			event = ExitGames::Common::ValueObject <ExitGames::Common::Hashtable *>(eventContent).getDataCopy();
-			float x = ExitGames::Common::ValueObject <float>(event->getValue(1)).getDataCopy();
-			float y = ExitGames::Common::ValueObject <float>(event->getValue(2)).getDataCopy();
+			event = Common::ValueObject <Common::Hashtable *>(eventContent).getDataCopy();
+			float x = Common::ValueObject <float>(event->getValue(1)).getDataCopy();
+			float y = Common::ValueObject <float>(event->getValue(2)).getDataCopy();
 			eventQueue.push({ static_cast <float>(playerNr), x, y });
 			break;
 		}
@@ -172,7 +173,7 @@ void NetworkListener::connectionErrorReturn(int errorCode) {
 	mStateAccessor.setState(STATE_DISCONNECTED);
 }
 
-void NetworkListener::connectReturn(int errorCode, const ExitGames::Common::JString& errorString) {
+void NetworkListener::connectReturn(int errorCode, const Common::JString& errorString) {
 	if (errorCode) {
 		mStateAccessor.setState(STATE_DISCONNECTING);
 		return;
@@ -184,7 +185,7 @@ void NetworkListener::disconnectReturn(void) {
 	mStateAccessor.setState(STATE_DISCONNECTED);
 }
 
-void NetworkListener::createRoomReturn(int localPlayerNr, const ExitGames::Common::Hashtable& /*gameProperties*/, const ExitGames::Common::Hashtable& /*playerProperties*/, int errorCode, const ExitGames::Common::JString& errorString) {
+void NetworkListener::createRoomReturn(int localPlayerNr, const Common::Hashtable& /*gameProperties*/, const Common::Hashtable& /*playerProperties*/, int errorCode, const Common::JString& errorString) {
 	if (errorCode) {
 		mStateAccessor.setState(STATE_CONNECTED);
 		return;
@@ -197,7 +198,7 @@ void NetworkListener::createRoomReturn(int localPlayerNr, const ExitGames::Commo
 	mStateAccessor.setState(STATE_JOINED);
 }
 
-void NetworkListener::joinRoomReturn(int localPlayerNr, const ExitGames::Common::Hashtable& /*gameProperties*/, const ExitGames::Common::Hashtable& /*playerProperties*/, int errorCode, const ExitGames::Common::JString& errorString) {
+void NetworkListener::joinRoomReturn(int localPlayerNr, const Common::Hashtable& /*gameProperties*/, const Common::Hashtable& /*playerProperties*/, int errorCode, const Common::JString& errorString) {
 	if (errorCode) {
 		mLastJoinedRoom = "";
 		mLastActorNr = 0;
@@ -207,7 +208,7 @@ void NetworkListener::joinRoomReturn(int localPlayerNr, const ExitGames::Common:
 	mStateAccessor.setState(STATE_JOINED);
 }
 
-void NetworkListener::joinRandomRoomReturn(int localPlayerNr, const ExitGames::Common::Hashtable& /*gameProperties*/, const ExitGames::Common::Hashtable& /*playerProperties*/, int errorCode, const ExitGames::Common::JString& errorString) {
+void NetworkListener::joinRandomRoomReturn(int localPlayerNr, const Common::Hashtable& /*gameProperties*/, const Common::Hashtable& /*playerProperties*/, int errorCode, const Common::JString& errorString) {
 	if (errorCode) {
 		mStateAccessor.setState(STATE_CONNECTED);
 		return;
@@ -219,7 +220,7 @@ void NetworkListener::joinRandomRoomReturn(int localPlayerNr, const ExitGames::C
 	mStateAccessor.setState(STATE_JOINED);
 }
 
-void NetworkListener::leaveRoomReturn(int errorCode, const ExitGames::Common::JString& errorString) {
+void NetworkListener::leaveRoomReturn(int errorCode, const Common::JString& errorString) {
 	if (errorCode) {
 		mStateAccessor.setState(STATE_DISCONNECTING);
 		return;
@@ -227,6 +228,6 @@ void NetworkListener::leaveRoomReturn(int errorCode, const ExitGames::Common::JS
 	mStateAccessor.setState(STATE_LEFT);
 }
 
-void NetworkListener::onAvailableRegions(const ExitGames::Common::JVector <ExitGames::Common::JString>& availableRegions, const ExitGames::Common::JVector <ExitGames::Common::JString>& availableRegionServers) {
+void NetworkListener::onAvailableRegions(const Common::JVector <Common::JString>& availableRegions, const Common::JVector <Common::JString>& availableRegionServers) {
 	mLoadBalancingClient.selectRegion(availableRegions[0]);
 }

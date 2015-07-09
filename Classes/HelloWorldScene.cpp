@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "NetworkEvent.h"
 
 USING_NS_CC;
 

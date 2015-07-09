@@ -14,12 +14,6 @@ enum NetworkState
     STATE_DISCONNECTED
 };
 
-enum NetworkEvent
-{
-    TOUCH_MOVING = 1,
-    TOUCH_BEGAN,
-    TAP_RESET,
-};
 
 
 #endif /* defined(__PhotonTest__NetworkState__) */
