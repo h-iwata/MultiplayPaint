@@ -1,5 +1,6 @@
 #include "NetworkListener.h"
 #include "NetworkEvent.h"
+#include "DataType.h"
 
 static const Common::JString APP_ID = L"5b09cec4-926b-4668-aef7-74292e07c22c"; // set your app id here
 static const Common::JString APP_VERSION = L"1.0";
@@ -145,16 +146,16 @@ void NetworkListener::customEventAction(int playerNr, nByte eventCode, const Com
     switch (eventCode) {
     case TOUCH_BEGAN: {
         event = Common::ValueObject<Common::Hashtable*>(eventContent).getDataCopy();
-        float x = Common::ValueObject<float>(event->getValue(1)).getDataCopy();
-        float y = Common::ValueObject<float>(event->getValue(2)).getDataCopy();
+        float x = Common::ValueObject<float>(event->getValue(static_cast<int>(DataType::LOCATION_X))).getDataCopy();
+        float y = Common::ValueObject<float>(event->getValue(static_cast<int>(DataType::LOCATION_Y))).getDataCopy();
         beginEventQueue.push({ static_cast<float>(playerNr), x, y });
         break;
     }
 
     case TOUCH_MOVING: {
         event = Common::ValueObject<Common::Hashtable*>(eventContent).getDataCopy();
-        float x = Common::ValueObject<float>(event->getValue(1)).getDataCopy();
-        float y = Common::ValueObject<float>(event->getValue(2)).getDataCopy();
+        float x = Common::ValueObject<float>(event->getValue(static_cast<int>(DataType::LOCATION_X))).getDataCopy();
+        float y = Common::ValueObject<float>(event->getValue(static_cast<int>(DataType::LOCATION_Y))).getDataCopy();
         eventQueue.push({ static_cast<float>(playerNr), x, y });
         break;
     }
