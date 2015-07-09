@@ -15,10 +15,10 @@ enum Input
 	INPUT_EXIT
 };
 
-class NetworkLogic : private ExitGames::LoadBalancing::Listener
+class NetworkListener : private ExitGames::LoadBalancing::Listener
 {
 public:
-	NetworkLogic(const ExitGames::LoadBalancing::AuthenticationValues& authenticationValues=ExitGames::LoadBalancing::AuthenticationValues());
+	NetworkListener(const ExitGames::LoadBalancing::AuthenticationValues& authenticationValues=ExitGames::LoadBalancing::AuthenticationValues());
     
     bool isRoomExists(void);
     void sendEvent(nByte code, ExitGames::Common::Hashtable* eventContent);

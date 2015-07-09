@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
-#include "NetworkLogic.h"
+#include "NetworkListener.h"
 
 
 USING_NS_CC;
@@ -32,7 +32,7 @@ private:
     RenderTexture* _renderTexture;
     Vec2 _previousTouchLocation;
     
-    NetworkLogic* networkLogic;
+    NetworkListener* networkLogic;
     
 };
 
