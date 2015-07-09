@@ -7,17 +7,18 @@
 #include <array>
 #include <queue>
 
-enum Input
-{
-	INPUT_NON = 0,
-	INPUT_CREATE_GAME,
-	INPUT_JOIN_GAME,
-	INPUT_EXIT
-};
+
 
 class NetworkListener : private ExitGames::LoadBalancing::Listener
 {
 public:
+    enum Input
+    {
+        INPUT_NON = 0,
+        INPUT_CREATE_GAME,
+        INPUT_JOIN_GAME,
+        INPUT_EXIT
+    };
 	NetworkListener(const ExitGames::LoadBalancing::AuthenticationValues& authenticationValues=ExitGames::LoadBalancing::AuthenticationValues());
     
     bool isRoomExists(void);
