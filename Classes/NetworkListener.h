@@ -12,8 +12,7 @@ using namespace ExitGames;
 class NetworkListener : private LoadBalancing::Listener
 {
 public:
-    enum Input
-    {
+    enum Input {
         INPUT_NON = 0,
         INPUT_CREATE_GAME,
         INPUT_JOIN_GAME,
@@ -21,11 +20,12 @@ public:
     };
 	NetworkListener(const LoadBalancing::AuthenticationValues& authenticationValues=LoadBalancing::AuthenticationValues());
     
+    void run(void);
     bool isRoomExists(void);
     void sendEvent(nByte code, Common::Hashtable* eventContent);
     
 	void registerForStateUpdates(NetworkLogicListener* listener);
-	void run(void);
+	
 	void connect(void);
 	void opCreateRoom(void);
 	void opJoinRandomRoom(void);

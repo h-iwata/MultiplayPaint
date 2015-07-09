@@ -39,16 +39,11 @@ void NetworkListener::run(void)
             connect();
             mStateAccessor.setState(STATE_CONNECTING);
             break;
-
-        case STATE_CONNECTING:
-            break;         // wait for callback
-
         case STATE_CONNECTED:
             switch (mLastInput) {
             case INPUT_CREATE_GAME:
                 opCreateRoom();
                 break;
-
             case INPUT_JOIN_GAME:
                 // remove false to enable rejoin
                 if (false && mLastJoinedRoom.length()) {
@@ -58,15 +53,10 @@ void NetworkListener::run(void)
                 }
                 mStateAccessor.setState(STATE_JOINING);
                 break;
-
-            default:                 // no or illegal input -> stay waiting for legal input
+            default:
                 break;
             }
             break;
-
-        case STATE_JOINING:
-            break;         // wait for callback
-
         case STATE_JOINED:
             sendEvent();
             switch (mLastInput) {
@@ -74,27 +64,24 @@ void NetworkListener::run(void)
                 mLoadBalancingClient.opLeaveRoom();
                 mStateAccessor.setState(STATE_LEAVING);
                 break;
-
             case INPUT_JOIN_GAME:
                 mLoadBalancingClient.opLeaveRoom(true);
                 mStateAccessor.setState(STATE_LEAVING);
                 break;
-
-            default:                 // no or illegal input -> stay waiting for legal input
+            default:
                 break;
             }
             break;
-
-        case STATE_LEAVING:
-            break;
-
         case STATE_LEFT:
             mStateAccessor.setState(STATE_CONNECTED);
             break;
-
+        case STATE_DISCONNECTED:
+            connect();
+        case STATE_CONNECTING:
+        case STATE_JOINING:
+        case STATE_LEAVING:
         case STATE_DISCONNECTING:
             break;
-
         default:
             break;
         }
@@ -103,18 +90,18 @@ void NetworkListener::run(void)
     mLoadBalancingClient.service();
 }
 
+void NetworkListener::connect(void)
+{
+    mLoadBalancingClient.connect();
+    mStateAccessor.setState(STATE_CONNECTING);
+}
+
 bool NetworkListener::isRoomExists(void)
 {
     if (mLoadBalancingClient.getRoomList().getIsEmpty()) {
         return false;
     }
     return true;
-}
-
-void NetworkListener::connect(void)
-{
-    mLoadBalancingClient.connect();
-    mStateAccessor.setState(STATE_CONNECTING);
 }
 
 void NetworkListener::disconnect(void)

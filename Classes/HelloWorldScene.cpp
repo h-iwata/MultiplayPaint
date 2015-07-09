@@ -109,20 +109,13 @@ void HelloWorld::update(float delta)
     switch (networkListener->getState()) {
     case STATE_CONNECTED:
     case STATE_LEFT:
+        // TODO: start touch event
         if (networkListener->isRoomExists()) {
             networkListener->setLastInput(NetworkListener::INPUT_JOIN_GAME);
         } else {
             networkListener->setLastInput(NetworkListener::INPUT_CREATE_GAME);
         }
         break;
-    case STATE_DISCONNECTED:
-        networkListener->connect();
-        break;
-    case STATE_CONNECTING:
-    case STATE_JOINING:
-    case STATE_JOINED:
-    case STATE_LEAVING:
-    case STATE_DISCONNECTING:
     default:
         break;
     }
