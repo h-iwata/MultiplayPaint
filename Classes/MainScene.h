@@ -30,7 +30,8 @@ private:
     void onTapCloseButton(Ref* pSender);
     
     RenderTexture* _renderTexture;
-    Vec2 _previousTouchLocation;
+    
+    std::map<int, Vec2> _previousTouchLocations;
     
     NetworkListener* networkListener;
     

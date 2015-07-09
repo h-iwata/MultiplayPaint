@@ -137,8 +137,6 @@ void NetworkListener::opJoinRandomRoom(void)
     mLoadBalancingClient.opJoinRandomRoom();
 }
 
-
-
 void NetworkListener::customEventAction(int playerNr, nByte eventCode, const Common::Object& eventContent)
 {
     Common::Hashtable* event;
@@ -156,7 +154,7 @@ void NetworkListener::customEventAction(int playerNr, nByte eventCode, const Com
         event = Common::ValueObject<Common::Hashtable*>(eventContent).getDataCopy();
         float x = Common::ValueObject<float>(event->getValue(static_cast<int>(DataType::LOCATION_X))).getDataCopy();
         float y = Common::ValueObject<float>(event->getValue(static_cast<int>(DataType::LOCATION_Y))).getDataCopy();
-        eventQueue.push({ static_cast<float>(playerNr), x, y });
+        movingEventQueue.push({ static_cast<float>(playerNr), x, y });
         break;
     }
 

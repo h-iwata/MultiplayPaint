@@ -35,7 +35,7 @@ public:
 	NetworkState getState(void) const;
     
     int playerNr = 0;
-    std::queue<std::array<float, 3>> eventQueue;
+    std::queue<std::array<float, 3>> movingEventQueue;
     std::queue<std::array<float, 3>> beginEventQueue;
     std::queue<bool> tapResetEnventQueue;
     

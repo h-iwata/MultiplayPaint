@@ -74,7 +74,7 @@ void MainScene::onTapResetButton(cocos2d::Ref* pSender)
 
 bool MainScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
 {
-    _previousTouchLocation = touch->getLocation();
+    _previousTouchLocations[networkListener->playerNr] = touch->getLocation();
     ExitGames::Common::Hashtable* eventContent = new ExitGames::Common::Hashtable();
     eventContent->put<int, float>(DataType::LOCATION_X, touch->getLocation().x);
     eventContent->put<int, float>(DataType::LOCATION_Y, touch->getLocation().y);
@@ -98,10 +98,10 @@ void MainScene::drawLine(int playerId, Vec2 position)
 {
     _renderTexture->begin();
     auto drawNode = DrawNode::create();
-    drawNode->drawSegment(_previousTouchLocation, position, 10, Color4F(1, 1, 1, 1));
+    drawNode->drawSegment(_previousTouchLocations[playerId], position, 10, Color4F(1, 1, 1, 1));
     drawNode->visit();
     _renderTexture->end();
-    _previousTouchLocation = position;
+    _previousTouchLocations[playerId] = position;
 }
 
 void MainScene::update(float delta)
@@ -124,12 +124,12 @@ void MainScene::update(float delta)
     while (!networkListener->beginEventQueue.empty()) {
         std::array<float, 3>arr = networkListener->beginEventQueue.front();
         networkListener->beginEventQueue.pop();
-        _previousTouchLocation =  Vec2(arr[DataType::LOCATION_X], arr[DataType::LOCATION_Y]);
+        _previousTouchLocations[static_cast<int>(arr[0])] =  Vec2(arr[DataType::LOCATION_X], arr[DataType::LOCATION_Y]);
     }
 
-    while (!networkListener->eventQueue.empty()) {
-        std::array<float, 3>arr = networkListener->eventQueue.front();
-        networkListener->eventQueue.pop();
+    while (!networkListener->movingEventQueue.empty()) {
+        std::array<float, 3>arr = networkListener->movingEventQueue.front();
+        networkListener->movingEventQueue.pop();
         drawLine(static_cast<int>(arr[0]), Vec2(arr[DataType::LOCATION_X], arr[DataType::LOCATION_Y]));
     }
 
