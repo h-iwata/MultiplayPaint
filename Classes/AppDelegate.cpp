@@ -3,9 +3,9 @@
 
 USING_NS_CC;
 
-AppDelegate::AppDelegate(){}
+AppDelegate::AppDelegate() {}
 
-AppDelegate::~AppDelegate(){}
+AppDelegate::~AppDelegate() {}
 
 void AppDelegate::initGLContextAttrs()
 {
@@ -17,7 +17,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
-    if(!glview) {
+    if (!glview) {
         glview = GLViewImpl::create("My Game");
         director->setOpenGLView(glview);
     }
@@ -27,10 +27,12 @@ bool AppDelegate::applicationDidFinishLaunching()
     return true;
 }
 
-void AppDelegate::applicationDidEnterBackground() {
+void AppDelegate::applicationDidEnterBackground()
+{
     Director::getInstance()->stopAnimation();
 }
 
-void AppDelegate::applicationWillEnterForeground() {
+void AppDelegate::applicationWillEnterForeground()
+{
     Director::getInstance()->startAnimation();
 }

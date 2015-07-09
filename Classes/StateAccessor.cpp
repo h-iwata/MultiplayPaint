@@ -8,7 +8,7 @@ NetworkState StateAccessor::getState(void) const
 void StateAccessor::setState(NetworkState newState)
 {
     mState = newState;
-    for(unsigned int i=0; i<mStateUpdateListeners.getSize(); i++)
+    for (unsigned int i = 0; i < mStateUpdateListeners.getSize(); i++)
         mStateUpdateListeners[i]->stateUpdate(newState);
 }
 
